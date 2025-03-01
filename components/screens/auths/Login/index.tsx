@@ -19,6 +19,10 @@ const LoginScreen = () => {
     // Navigate to forget password screen
     router.navigate("/forget-password");
   };
+  const handleLogin = () => {
+    // Handle login
+    router.navigate("/(tabs)");
+  };
   return (
     <View style={loginStyles.loginContainer}>
       <Text style={[globalStyle.headerText, loginStyles.screenTitle]}>{TEXTS.loginScreen.headerTitle}</Text>
@@ -40,10 +44,12 @@ const LoginScreen = () => {
             placeholder={TEXTS.loginScreen.passwordPlaceHolder}
           />
         </FormGroup>
-        <Pressable onPress={handleGoToForgetPasswordScreen} style={loginStyles.forgotPassword}>
-          <Text>{TEXTS.loginScreen.forgotPassword}</Text>
-        </Pressable>
-        <Button style={loginStyles.loginButton} onPress={() => {}}>
+        <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
+          <Pressable onPress={handleGoToForgetPasswordScreen} style={loginStyles.forgotPassword}>
+            <Text>{TEXTS.loginScreen.forgotPassword}</Text>
+          </Pressable>
+        </View>
+        <Button style={loginStyles.loginButton} onPress={handleLogin}>
           <Text style={loginStyles.loginButtonText}>{TEXTS.loginScreen.loginButton}</Text>
         </Button>
       </View>

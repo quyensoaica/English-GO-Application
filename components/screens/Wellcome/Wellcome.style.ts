@@ -7,12 +7,21 @@ const wellcomeStyle = StyleSheet.create({
     height: "100%",
     alignItems: "center",
     backgroundColor: COLORS.backgroundPrimary,
-    padding: 13,
+  },
+  imageBox: {
+    backgroundColor: "#ffeff8",
+    marginBottom: 20,
+    width: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+    borderBottomRightRadius: 60,
+    borderBottomLeftRadius: 60,
+    boxShadow: "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset",
   },
   textBox: {
     display: "flex",
     alignItems: "center",
-    // justifyContent: "center",
+    padding: 20,
     minHeight: 230,
   },
   tabTitle: {

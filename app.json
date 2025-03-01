@@ -4,13 +4,14 @@
     "slug": "medicine-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/logo-full-2.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/images/medicine-icon.png",
+      "image": "./assets/images/logo-full-2.png",
       "resizeMode": "contain",
+      "imageWidth": 400,
       "backgroundColor": "#fafafa"
     },
     "ios": {
@@ -18,7 +19,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/medicine-icon.png",
+        "foregroundImage": "./assets/images/logo-full-2.png",
         "backgroundColor": "#fafafa"
       }
     },
@@ -32,8 +33,8 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/medicine-icon.png",
-          "imageWidth": 200,
+          "image": "./assets/images/logo-full-2.png",
+          "imageWidth": 400,
           "resizeMode": "contain",
           "backgroundColor": "#fafafa"
         }

@@ -1,6 +1,6 @@
 const TEXTS = {
   app: {
-    appName: "Medicine Tracker",
+    appName: "English GO",
   },
   loginScreen: {
     headerTitle: "Đăng nhập hệ thống",

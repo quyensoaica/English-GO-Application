@@ -4,7 +4,7 @@ import { ApplicationProvider } from "@ui-kitten/components";
 import * as Font from "expo-font";
 import { Stack } from "expo-router";
 import { useEffect, useState } from "react";
-import { Text } from "react-native";
+import { ActivityIndicator } from "react-native";
 export default function RootLayout() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
@@ -25,7 +25,7 @@ export default function RootLayout() {
   }, []);
 
   if (!fontsLoaded) {
-    return <Text>Loading...</Text>;
+    return <ActivityIndicator />;
   }
   return (
     <ApplicationProvider {...eva} theme={eva.light}>
@@ -38,6 +38,7 @@ export default function RootLayout() {
             },
           }}
         >
+          <Stack.Screen name='(tabs)' />
           <Stack.Screen name='index' />
           <Stack.Screen name='wellcome' />
         </Stack>

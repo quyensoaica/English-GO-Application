@@ -43,7 +43,6 @@ const loginStyles = StyleSheet.create({
   forgotPassword: {
     textAlign: "right",
     marginTop: 10,
-    width: "100%",
     flexDirection: "row",
     justifyContent: "flex-end",
     paddingRight: 10,
