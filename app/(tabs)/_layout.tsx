@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     width: "90%",
     marginHorizontal: "5%",
     paddingHorizontal: 10,
-    boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+    boxShadow: "0 0 20px rgb(209, 57, 166)",
   },
   tabarLabelStyle: {
     color: "white",

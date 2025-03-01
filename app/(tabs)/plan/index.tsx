@@ -1,10 +1,11 @@
+import PlanScreen from "@/components/screens/Plan";
 import React from "react";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 
 const PlanTab = () => {
   return (
-    <View>
-      <Text>PlanTab</Text>
+    <View style={{ flex: 1 }}>
+      <PlanScreen />
     </View>
   );
 };

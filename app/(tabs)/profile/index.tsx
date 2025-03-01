@@ -1,10 +1,11 @@
+import ProfileScreen from "@/components/screens/Profile";
 import React from "react";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 
 const ProfileTab = () => {
   return (
-    <View>
-      <Text>ProfileTab</Text>
+    <View style={{ flex: 1 }}>
+      <ProfileScreen />
     </View>
   );
 };

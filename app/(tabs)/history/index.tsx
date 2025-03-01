@@ -1,10 +1,11 @@
+import HistoryScreen from "@/components/screens/History";
 import React from "react";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 
 const HistoryTab = () => {
   return (
-    <View>
-      <Text>HistoryTab</Text>
+    <View style={{ flex: 1 }}>
+      <HistoryScreen />
     </View>
   );
 };

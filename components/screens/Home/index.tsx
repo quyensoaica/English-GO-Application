@@ -1,11 +1,20 @@
+import MainLayout from "@/components/layouts/MainLayout";
 import React from "react";
-import { Text, View } from "react-native";
+import HomeAbout from "./HomeAbout";
+import HomeBanner from "./HomeBanner";
+import HomeEvaluate from "./HomeEvaluate";
+import HomeFeedback from "./HomeFeedback";
+import HomeHeader from "./HomeHeader";
 
 const HomeScreen = () => {
   return (
-    <View>
-      <Text>HomeScreen</Text>
-    </View>
+    <MainLayout>
+      <HomeHeader />
+      <HomeBanner />
+      <HomeAbout />
+      <HomeFeedback />
+      <HomeEvaluate />
+    </MainLayout>
   );
 };
 
