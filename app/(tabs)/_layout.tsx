@@ -1,8 +1,8 @@
 import COLORS from "@/constants/color";
 import FONTS from "@/constants/fonts";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { Tabs, useRouter } from "expo-router";
-import React, { useEffect } from "react";
+import { Tabs, usePathname, useRouter } from "expo-router";
+import React, { useEffect, useMemo } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import * as Animatable from "react-native-animatable";
 import HomeTab from ".";
@@ -47,7 +47,7 @@ const tabArray: {
     component: HistoryTab,
   },
   {
-    name: "profile/index",
+    name: "profile",
     label: "Trang cá nhân",
     route: "/(tabs)/profile",
     icon: "user",
@@ -112,12 +112,20 @@ const TabarButton = ({ icon, onPress, label, ...props }: TabarButtonProps) => {
 
 export default function TabLayout() {
   const router = useRouter();
+  const pathname = usePathname();
+  const hiddenTabBarRoutes = useMemo(() => {
+    return ["/profile/update-profile", "/profile/change-password"];
+  }, []);
+  const [hiddenTabBar, setHiddenTabBar] = React.useState(false);
+  useEffect(() => {
+    setHiddenTabBar(hiddenTabBarRoutes.includes(pathname));
+  }, [pathname]);
   return (
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: "blue",
         headerShown: false,
-        tabBarStyle: styles.tabarStyle,
+        tabBarStyle: hiddenTabBar ? { display: "none" } : styles.tabarStyle,
       }}
     >
       {tabArray.map((tab) => {
@@ -147,8 +155,8 @@ const styles = StyleSheet.create({
     left: 10,
     right: 10,
     bottom: 10,
-    width: "90%",
-    marginHorizontal: "5%",
+    width: "94%",
+    marginHorizontal: "3%",
     paddingHorizontal: 10,
     boxShadow: "0 0 20px rgb(209, 57, 166)",
   },

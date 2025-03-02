@@ -1,12 +1,15 @@
-import MainLayout from "@/components/layouts/MainLayout";
+import COLORS from "@/constants/color";
 import React from "react";
-import { Text } from "react-native";
+import { View } from "react-native";
+import ProfileAction from "./ProfileAction";
+import ProfileInfomation from "./ProfileInfomation";
 
 const ProfileScreen = () => {
   return (
-    <MainLayout>
-      <Text>ProfileScreen</Text>
-    </MainLayout>
+    <View style={{ flex: 1, backgroundColor: COLORS.bgPrimary }}>
+      <ProfileInfomation />
+      <ProfileAction />
+    </View>
   );
 };
 

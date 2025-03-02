@@ -46,7 +46,6 @@ const WellcomeScreen = () => {
     ],
     []
   );
-  console.log("selectedIndex", wellcomeTabs[selectedIndex]);
   return (
     <View style={{ position: "relative" }}>
       <ViewPager selectedIndex={selectedIndex} onSelect={(index) => setSelectedIndex(index)}>

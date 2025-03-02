@@ -1,13 +1,13 @@
-import ProfileScreen from "@/components/screens/Profile";
+import UpdateProfileScreen from "@/components/screens/UpdateProfile";
 import ScrollViewCustom from "@/components/ui/ScrollViewCustom";
 import React from "react";
 
-const ProfileTab = () => {
+const UpdateProfile = () => {
   return (
     <ScrollViewCustom>
-      <ProfileScreen />
+      <UpdateProfileScreen />
     </ScrollViewCustom>
   );
 };
 
-export default ProfileTab;
+export default UpdateProfile;

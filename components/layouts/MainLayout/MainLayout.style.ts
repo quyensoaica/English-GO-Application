@@ -11,6 +11,7 @@ const MainLayoutStyles = StyleSheet.create({
   },
   contentBox: {
     flex: 1,
+    flexGrow: 1,
     padding: 10,
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,

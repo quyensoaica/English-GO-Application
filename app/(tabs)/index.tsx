@@ -1,12 +1,15 @@
+import MainLayout from "@/components/layouts/MainLayout";
 import HomeScreen from "@/components/screens/Home";
+import ScrollViewCustom from "@/components/ui/ScrollViewCustom";
 import React from "react";
-import { View } from "react-native";
 
 const HomeTab = () => {
   return (
-    <View style={{ flex: 1 }}>
-      <HomeScreen />
-    </View>
+    <MainLayout>
+      <ScrollViewCustom>
+        <HomeScreen />
+      </ScrollViewCustom>
+    </MainLayout>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView, View } from "react-native";
+import { View } from "react-native";
 import WellcomeBox from "../components/WellcomeBox";
 import MainLayoutStyles from "./MainLayout.style";
 
@@ -12,10 +12,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
       <View style={MainLayoutStyles.wellcomeBox}>
         <WellcomeBox />
       </View>
-      <ScrollView style={MainLayoutStyles.contentBox} showsVerticalScrollIndicator={false}>
-        {children}
-        <View style={MainLayoutStyles.lastBox}></View>
-      </ScrollView>
+      <View style={MainLayoutStyles.contentBox}>{children}</View>
     </View>
   );
 };
