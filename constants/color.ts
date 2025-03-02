@@ -8,5 +8,6 @@ const COLORS = {
   textWhite: "#fff",
   textGray: "#aaa",
   backgroundPrimary: "#fafafa",
+  placeHoderTextColor: "#4400cb8a",
 };
 export default COLORS;

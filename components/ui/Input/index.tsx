@@ -1,6 +1,7 @@
+import COLORS from "@/constants/color";
 import InputTypes from "@/constants/inputTypes";
 import React from "react";
-import { StyleProp, TextInput, TextStyle } from "react-native";
+import { StyleProp, TextInput, TextStyle, View } from "react-native";
 import inputCustomStyles from "./InputCustom.style";
 interface InputCustomProps extends React.ComponentProps<typeof TextInput> {
   value?: string;
@@ -10,6 +11,10 @@ interface InputCustomProps extends React.ComponentProps<typeof TextInput> {
   style?: StyleProp<TextStyle>;
   type?: InputTypes;
   secureTextEntry?: boolean;
+  iconLeft?: React.ReactNode;
+  iconRight?: React.ReactNode;
+  iconRightPress?: () => void;
+  placeholderTextColor?: string;
 }
 const InputCustom = ({
   value,
@@ -17,23 +22,37 @@ const InputCustom = ({
   placeholder,
   disabled = false,
   style,
+  iconLeft,
+  iconRight,
+  iconRightPress,
   secureTextEntry,
+  placeholderTextColor = COLORS.textGray,
   ...props
 }: InputCustomProps) => {
   const [focus, setFocus] = React.useState(false);
   return (
-    <TextInput
-      placeholder={placeholder}
-      value={value}
-      onFocus={() => setFocus(true)}
-      onBlur={() => setFocus(false)}
-      editable={!disabled}
-      style={[inputCustomStyles.defaultInput, focus && inputCustomStyles.focusInput, style]}
-      onChangeText={(nextValue) => onChangeText && onChangeText(nextValue)}
-      keyboardType='default'
-      secureTextEntry={secureTextEntry}
-      {...props}
-    />
+    <View style={inputCustomStyles.container}>
+      <TextInput
+        placeholder={placeholder}
+        value={value}
+        onFocus={() => setFocus(true)}
+        onBlur={() => setFocus(false)}
+        editable={!disabled}
+        style={[
+          inputCustomStyles.defaultInput,
+          focus && inputCustomStyles.focusInput,
+          style,
+          { paddingLeft: iconLeft ? 60 : 10 },
+        ]}
+        placeholderTextColor={placeholderTextColor}
+        onChangeText={(nextValue) => onChangeText && onChangeText(nextValue)}
+        keyboardType='default'
+        secureTextEntry={secureTextEntry}
+        {...props}
+      />
+      {iconLeft && <View style={inputCustomStyles.iconLeftBox}>{iconLeft}</View>}
+      {iconRight && <View style={inputCustomStyles.iconRightBox}>{iconRight}</View>}
+    </View>
   );
 };
 

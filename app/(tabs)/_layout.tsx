@@ -120,6 +120,7 @@ export default function TabLayout() {
   useEffect(() => {
     setHiddenTabBar(hiddenTabBarRoutes.includes(pathname));
   }, [pathname]);
+
   return (
     <Tabs
       screenOptions={{
