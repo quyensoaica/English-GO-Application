@@ -1,21 +1,8 @@
-import { Button } from "@ui-kitten/components";
-import { useRouter } from "expo-router";
+import WellcomeScreen from "@/components/screens/Wellcome";
 import React from "react";
-import { View } from "react-native";
 
 const Wellcome = () => {
-  const router = useRouter();
-  return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Button onPress={() => router.back()}>Click me</Button>
-    </View>
-  );
+  return <WellcomeScreen />;
 };
 
 export default Wellcome;

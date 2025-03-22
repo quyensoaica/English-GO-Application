@@ -1,12 +1,40 @@
 import ScreenWrapper from "@/components/ScreenWrapper";
-import { store } from "@/stores";
+import ToastCustom from "@/components/ui/Toast";
+import { AppDispatch, RootState, store } from "@/stores";
+import { authAction } from "@/stores/authStore/authReducer";
 import * as eva from "@eva-design/eva";
 import { ApplicationProvider } from "@ui-kitten/components";
 import * as Font from "expo-font";
-import { Stack } from "expo-router";
-import { useEffect, useState } from "react";
+import { Stack, useRouter } from "expo-router";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { ActivityIndicator } from "react-native";
-import { Provider } from "react-redux";
+import { Provider, useDispatch, useSelector } from "react-redux";
+
+interface GetInfomationProviderProps {
+  children: React.ReactNode;
+}
+const GetInfomationProvider = ({ children }: GetInfomationProviderProps) => {
+  const dispatch: AppDispatch = useDispatch();
+  const router = useRouter();
+  const { currentUser, loading, isGetCurrentUserFailed } = useSelector((state: RootState) => state.authStore);
+  useEffect(() => {
+    const loadUserInformation = async () => {
+      dispatch(authAction.getCurrentUser());
+    };
+    loadUserInformation();
+  }, [dispatch]);
+
+  useLayoutEffect(() => {
+    if (!loading && currentUser?.id) {
+      router.replace("/(tabs)");
+    }
+    if (isGetCurrentUserFailed) {
+      router.replace("/wellcome");
+    }
+  }, [currentUser?.id, loading, isGetCurrentUserFailed]);
+  return children;
+};
+
 export default function RootLayout() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
@@ -23,6 +51,7 @@ export default function RootLayout() {
       });
       setFontsLoaded(true);
     }
+
     loadFonts();
   }, []);
 
@@ -32,20 +61,23 @@ export default function RootLayout() {
   return (
     <ApplicationProvider {...eva} theme={eva.light}>
       <Provider store={store}>
-        <ScreenWrapper bg='#fafafa'>
-          <Stack
-            screenOptions={{
-              headerShown: false,
-              contentStyle: {
-                backgroundColor: "#fafafa",
-              },
-            }}
-          >
-            <Stack.Screen name='(tabs)' />
-            <Stack.Screen name='index' />
-            <Stack.Screen name='wellcome' />
-          </Stack>
-        </ScreenWrapper>
+        <GetInfomationProvider>
+          <ScreenWrapper bg='#fafafa'>
+            <Stack
+              screenOptions={{
+                headerShown: false,
+                contentStyle: {
+                  backgroundColor: "#fafafa",
+                },
+              }}
+            >
+              <Stack.Screen name='(tabs)' />
+              <Stack.Screen name='index' />
+              <Stack.Screen name='wellcome' />
+            </Stack>
+          </ScreenWrapper>
+          <ToastCustom />
+        </GetInfomationProvider>
       </Provider>
     </ApplicationProvider>
   );

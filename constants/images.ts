@@ -26,8 +26,13 @@ import iconHistory from "@/assets/images/icons/icon-history.png";
 import iconPractice from "@/assets/images/icons/icon-practice.png";
 import iconReward from "@/assets/images/icons/icon-reward.png";
 
+import banner1 from "@/assets/images/banners/banner-1.png";
+import banner2 from "@/assets/images/banners/banner-2.png";
+import banner3 from "@/assets/images/banners/banner-3.png";
 import bannerExam from "@/assets/images/banners/banner-exam.png";
+import bannerLayout from "@/assets/images/banners/banner-layout.png";
 import bannerService from "@/assets/images/banners/banner-service.png";
+import bannerTablet from "@/assets/images/banners/banner-tablet.png";
 
 const IMAGES = {
   wellcome: {
@@ -60,6 +65,11 @@ const IMAGES = {
   banners: {
     bannerService,
     bannerExam,
+    bannerTablet,
+    bannerLayout,
+    banner1,
+    banner2,
+    banner3,
   },
   headerSpace,
   logoIcon: logo,

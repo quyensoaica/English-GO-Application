@@ -1,13 +1,13 @@
-import PracticeScreen from "@/components/screens/Practice";
+import ExamRoomScreen from "@/components/screens/ExamRoom";
 import ScrollViewCustom from "@/components/ui/ScrollViewCustom";
 import React from "react";
 
-const PracticeTab = () => {
+const ExamRoom = () => {
   return (
     <ScrollViewCustom>
-      <PracticeScreen />
+      <ExamRoomScreen />
     </ScrollViewCustom>
   );
 };
 
-export default PracticeTab;
+export default ExamRoom;

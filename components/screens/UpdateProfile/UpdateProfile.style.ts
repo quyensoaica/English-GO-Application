@@ -4,7 +4,8 @@ import { StyleSheet } from "react-native";
 
 const UpdateProfileStyles = StyleSheet.create({
   container: {
-    padding: 0,
+    padding: 10,
+    backgroundColor: COLORS.bgPrimary,
   },
   changeAvatarBox: {
     justifyContent: "center",

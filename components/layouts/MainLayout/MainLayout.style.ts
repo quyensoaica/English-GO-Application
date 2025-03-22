@@ -12,7 +12,7 @@ const MainLayoutStyles = StyleSheet.create({
   contentBox: {
     flex: 1,
     flexGrow: 1,
-    padding: 10,
+    paddingTop: 20,
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
     boxShadow: "0 0 10px rgba(209, 57, 166, 0.51)",

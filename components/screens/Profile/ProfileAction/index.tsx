@@ -1,3 +1,4 @@
+import { removeAccessToken } from "@/helpers/functions/accessToken";
 import { useRouter } from "expo-router";
 import React, { useMemo } from "react";
 import { View } from "react-native";
@@ -6,6 +7,11 @@ import ProfileActionStyles from "./ProfileAction.style";
 
 const ProfileAction = () => {
   const router = useRouter();
+  const handleLogout = () => {
+    // Logout
+    removeAccessToken();
+    router.navigate("/wellcome");
+  };
   const listAction = useMemo(() => {
     return [
       {
@@ -42,7 +48,7 @@ const ProfileAction = () => {
         key: 6,
         title: "Đăng xuất",
         icon: "sign-out",
-        onPress: () => {},
+        onPress: handleLogout,
       },
     ];
   }, []);

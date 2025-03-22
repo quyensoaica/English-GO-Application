@@ -3,6 +3,7 @@ import { getAccessToken } from "@/helpers/functions/accessToken";
 import axios from "axios";
 // import { IAppResponseBase } from '~/baseTypes';
 const baseURL = String(ENV.BACKEND_URL);
+console.log("baseURL", baseURL);
 const http = axios.create({
   baseURL,
   headers: {

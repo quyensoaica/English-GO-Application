@@ -1,4 +1,4 @@
-import WellcomeScreen from "@/components/screens/Wellcome";
+import { ActivityIndicator } from "react-native";
 export default function Index() {
-  return <WellcomeScreen />;
+  return <ActivityIndicator />;
 }

@@ -3,7 +3,7 @@ import FONTS from "@/constants/fonts";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Tabs, usePathname, useRouter } from "expo-router";
 import React, { useEffect, useMemo } from "react";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { BackHandler, StyleSheet, TouchableOpacity } from "react-native";
 import * as Animatable from "react-native-animatable";
 import HomeTab from ".";
 import HistoryTab from "./history";
@@ -25,7 +25,7 @@ const tabArray: {
     component: PlanTab,
   },
   {
-    name: "practice/index",
+    name: "practice",
     label: "Thi thử",
     route: "/(tabs)/practice",
     icon: "mortar-board",
@@ -114,15 +114,33 @@ export default function TabLayout() {
   const router = useRouter();
   const pathname = usePathname();
   const hiddenTabBarRoutes = useMemo(() => {
-    return ["/profile/update-profile", "/profile/change-password"];
+    return ["/profile/update-profile", "/profile/change-password", "/practice/exam-room"];
   }, []);
   const [hiddenTabBar, setHiddenTabBar] = React.useState(false);
   useEffect(() => {
     setHiddenTabBar(hiddenTabBarRoutes.includes(pathname));
   }, [pathname]);
 
+  useEffect(() => {
+    const backAction = () => {
+      console.log("pathname", pathname);
+      if (pathname === "/" || pathname === "/(tabs)/index" || pathname === "/(tabs)") {
+        BackHandler.exitApp(); // Thoát ứng dụng nếu đang ở tab "index"
+        return true; // Chặn hành vi quay lại
+      } else if (pathname === "/plan" || pathname === "/practice" || pathname === "/history" || pathname === "/profile") {
+        router.replace("/"); // Nếu không phải Home, điều hướng về Home
+        return true; // Ngăn hành vi quay lại tab trước đó
+      }
+      return false; // Cho phép quay lại
+    };
+
+    const backHandler = BackHandler.addEventListener("hardwareBackPress", backAction);
+
+    return () => backHandler.remove();
+  }, [pathname]);
   return (
     <Tabs
+      initialRouteName='index'
       screenOptions={{
         tabBarActiveTintColor: "blue",
         headerShown: false,

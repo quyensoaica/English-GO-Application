@@ -1,5 +1,9 @@
-import React from "react";
+import { AppDispatch } from "@/stores";
+import { EvaluateActions } from "@/stores/evaluateStore/evaluateReducer";
+import React, { useEffect } from "react";
 import { View } from "react-native";
+import { useDispatch } from "react-redux";
+import HomeStyles from "./Home.style";
 import HomeAbout from "./HomeAbout";
 import HomeBanner from "./HomeBanner";
 import HomeEvaluate from "./HomeEvaluate";
@@ -7,21 +11,12 @@ import HomeFeedback from "./HomeFeedback";
 import HomeHeader from "./HomeHeader";
 
 const HomeScreen = () => {
-  // useEffect(() => {
-  //   console.log("fetch data");
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await http.get("/auth/get-group-roles");
-  //       console.log("Axios Response:", response);
-  //     } catch (error) {
-  //       console.error("Axios Error:", error);
-  //     }
-  //   };
-  //   fetchData();
-  // }, []);
-
+  const dispatch: AppDispatch = useDispatch();
+  useEffect(() => {
+    dispatch(EvaluateActions.getAllEvaluates({ page: 1, limit: 10, isShow: true }));
+  }, [dispatch]);
   return (
-    <View>
+    <View style={HomeStyles.container}>
       <HomeHeader />
       <HomeBanner />
       <HomeAbout />

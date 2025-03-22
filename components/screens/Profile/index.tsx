@@ -10,7 +10,7 @@ const ProfileScreen = () => {
   const { groupRoles } = useSelector((state: RootState) => state.appStore);
   // console.log("groupRoles in profile", groupRoles);
   return (
-    <View style={{ flex: 1, backgroundColor: COLORS.bgPrimary }}>
+    <View style={{ flex: 1, backgroundColor: COLORS.bgPrimary, padding: 10 }}>
       <ProfileInfomation />
       <ProfileAction />
     </View>

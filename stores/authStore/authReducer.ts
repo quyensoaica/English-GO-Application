@@ -10,6 +10,7 @@ export interface AuthState {
   loading: boolean;
   error: string | null;
   currentUser: ICurrentUser | null;
+  isGetCurrentUserFailed: boolean;
   isSubmitting: boolean;
   isOpenModalFirstUpdate: boolean;
 }
@@ -21,6 +22,7 @@ const initialState: AuthState = {
   error: null,
   currentUser: null,
   isOpenModalFirstUpdate: false,
+  isGetCurrentUserFailed: false,
   isSubmitting: false,
 };
 
@@ -45,14 +47,17 @@ export const AuthSlice = createSlice({
     builder
       .addCase(authThunks.getCurrentUser.pending, (state) => {
         state.loading = true;
+        state.isGetCurrentUserFailed = false;
       })
       .addCase(authThunks.getCurrentUser.fulfilled, (state, action) => {
         state.currentUser = action.payload.data;
         state.isAuthenticated = true;
+        state.isGetCurrentUserFailed = false;
         state.loading = false;
       })
       .addCase(authThunks.getCurrentUser.rejected, (state) => {
         state.isAuthenticated = false;
+        state.isGetCurrentUserFailed = true;
         state.loading = false;
       });
 

@@ -37,7 +37,7 @@ const HomeFeedbackStyles = StyleSheet.create({
     alignItems: "center",
   },
   name: {
-    fontSize: 16,
+    fontSize: 14,
     color: COLORS.primary,
     fontFamily: FONTS.MERIENDA_BOLD,
   },
@@ -47,7 +47,7 @@ const HomeFeedbackStyles = StyleSheet.create({
     marginTop: 2,
   },
   feexbackContent: {
-    fontFamily: FONTS.MERIENDA_LIGHT,
+    fontFamily: FONTS.MERIENDA_MEDIUM,
     color: COLORS.secondary,
     fontSize: 11,
     textAlign: "center",
