@@ -1,10 +1,12 @@
 import ScreenWrapper from "@/components/ScreenWrapper";
+import { store } from "@/stores";
 import * as eva from "@eva-design/eva";
 import { ApplicationProvider } from "@ui-kitten/components";
 import * as Font from "expo-font";
 import { Stack } from "expo-router";
 import { useEffect, useState } from "react";
 import { ActivityIndicator } from "react-native";
+import { Provider } from "react-redux";
 export default function RootLayout() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
@@ -29,20 +31,22 @@ export default function RootLayout() {
   }
   return (
     <ApplicationProvider {...eva} theme={eva.light}>
-      <ScreenWrapper bg='#fafafa'>
-        <Stack
-          screenOptions={{
-            headerShown: false,
-            contentStyle: {
-              backgroundColor: "#fafafa",
-            },
-          }}
-        >
-          <Stack.Screen name='(tabs)' />
-          <Stack.Screen name='index' />
-          <Stack.Screen name='wellcome' />
-        </Stack>
-      </ScreenWrapper>
+      <Provider store={store}>
+        <ScreenWrapper bg='#fafafa'>
+          <Stack
+            screenOptions={{
+              headerShown: false,
+              contentStyle: {
+                backgroundColor: "#fafafa",
+              },
+            }}
+          >
+            <Stack.Screen name='(tabs)' />
+            <Stack.Screen name='index' />
+            <Stack.Screen name='wellcome' />
+          </Stack>
+        </ScreenWrapper>
+      </Provider>
     </ApplicationProvider>
   );
 }
