@@ -2,6 +2,7 @@ import ChangeAvatar from "@/components/ui/ChangeAvatar";
 import DatePickerCustom from "@/components/ui/DatePicker";
 import DropdownCustom from "@/components/ui/DropdownCustom";
 import InputCustom from "@/components/ui/Input";
+import StackHeader from "@/components/ui/StackHeader";
 import COLORS from "@/constants/color";
 import FONTS from "@/constants/fonts";
 import Genders from "@/constants/genders";
@@ -19,6 +20,7 @@ const UpdateProfileScreen = () => {
   const [selectedGender, setSelectedGender] = React.useState<string>(Genders[0].value);
   return (
     <View style={UpdateProfileStyles.container}>
+      <StackHeader showBackButton={true} title='Cập nhật thông tin cá nhân' />
       <View style={UpdateProfileStyles.changeAvatarBox}>
         <ChangeAvatar size={120} />
       </View>

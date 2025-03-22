@@ -1,15 +1,18 @@
 import COLORS from "@/constants/color";
+import FONTS from "@/constants/fonts";
 import { StyleSheet } from "react-native";
 
 const StackHeaderStyles = StyleSheet.create({
   container: {
-    backgroundColor: COLORS.secondary,
     height: 50,
-    justifyContent: "center",
+    flexDirection: "row",
     alignItems: "center",
-    position: "fixed",
-    top: 50,
-    left: 0,
+  },
+  title: {
+    fontSize: 16,
+    fontFamily: FONTS.MERIENDA_BOLD,
+    color: COLORS.primary,
+    marginLeft: 10,
   },
 });
 export default StackHeaderStyles;
