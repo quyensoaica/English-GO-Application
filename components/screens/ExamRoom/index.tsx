@@ -1,6 +1,7 @@
 import IMAGES from "@/constants/images";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Layout, ViewPager } from "@ui-kitten/components";
+import { useRouter } from "expo-router";
 import React from "react";
 import { Image, Pressable, Text, View } from "react-native";
 import ExamRoomStyles from "./ExamRoom.style";
@@ -9,6 +10,7 @@ import DeviceInfomation from "./components/DeviceInfomation";
 import ExamInfomation from "./components/ExamInfomation";
 const ExamRoomScreen = () => {
   const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const router = useRouter();
   const handleChangeIndex = (type: "prev" | "next") => {
     if (type === "prev") {
       if (selectedIndex === 0) return;
@@ -17,6 +19,9 @@ const ExamRoomScreen = () => {
       if (selectedIndex === 2) return;
       setSelectedIndex((prev) => (prev === 2 ? 0 : prev + 1));
     }
+  };
+  const handleStartExam = () => {
+    router.push("/exam/participate-exam");
   };
   return (
     <View style={ExamRoomStyles.container}>
@@ -38,7 +43,7 @@ const ExamRoomScreen = () => {
         <Pressable onPress={() => handleChangeIndex("prev")} style={ExamRoomStyles.buttonTab}>
           <FontAwesome name='caret-left' size={24} color='white' />
         </Pressable>
-        <Pressable style={ExamRoomStyles.buttonStart}>
+        <Pressable onPress={handleStartExam} style={ExamRoomStyles.buttonStart}>
           <Text style={ExamRoomStyles.buttonStartText}>Bắt đầu</Text>
         </Pressable>
         <Pressable onPress={() => handleChangeIndex("next")} style={ExamRoomStyles.buttonTab}>

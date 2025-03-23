@@ -73,6 +73,7 @@ export default function RootLayout() {
             >
               <Stack.Screen name='(tabs)' />
               <Stack.Screen name='index' />
+              <Stack.Screen name='exam/participate-exam/index' />
               <Stack.Screen name='wellcome' />
             </Stack>
           </ScreenWrapper>
