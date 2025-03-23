@@ -7,7 +7,7 @@ const ParticipateExamStyles = StyleSheet.create({
     backgroundColor: COLORS.bgPrimary,
   },
   header: {
-    height: 60,
+    height: 70,
   },
   body: {
     flex: 1,

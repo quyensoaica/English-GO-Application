@@ -4,6 +4,7 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import React from "react";
 import { Pressable, Text, View } from "react-native";
 import HeaderStyles from "./Header.style";
+import TimeCountdown from "./TimeCountdown";
 const Header = () => {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
   return (
@@ -14,6 +15,7 @@ const Header = () => {
         </Pressable>
         <View style={HeaderStyles.titleBox}>
           <Text style={HeaderStyles.title}>Listening</Text>
+          <TimeCountdown initTime={1000} handleSubmit={() => console.log("submit")} />
         </View>
         <Pressable style={HeaderStyles.menuIcon}>
           <FontAwesome name='check' size={20} color={COLORS.secondary} />

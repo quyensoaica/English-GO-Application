@@ -7,6 +7,7 @@ import ExamAnswer from "./components/ExamAnswer";
 import ExamQuestion from "./components/ExamQuestion";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import ModalConfirmSubmit from "./components/ModalConfirmSubmit";
 const ParticipateExamScreen = () => {
   const router = useRouter();
   useFocusEffect(
@@ -16,7 +17,7 @@ const ParticipateExamScreen = () => {
           { text: "Hủy", style: "cancel" },
           { text: "Thoát", onPress: () => router.back() },
         ]);
-        return true; // Ngăn chặn hành động back mặc định
+        return true;
       };
 
       BackHandler.addEventListener("hardwareBackPress", onBackPress);
@@ -35,6 +36,7 @@ const ParticipateExamScreen = () => {
       </ScrollView>
       <View style={ParticipateExamStyles.footer}>
         <Footer />
+        <ModalConfirmSubmit />
       </View>
     </View>
   );

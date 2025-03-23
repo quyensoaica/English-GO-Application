@@ -31,6 +31,7 @@ import banner2 from "@/assets/images/banners/banner-2.png";
 import banner3 from "@/assets/images/banners/banner-3.png";
 import bannerExam from "@/assets/images/banners/banner-exam.png";
 import bannerLayout from "@/assets/images/banners/banner-layout.png";
+import bannerPerson from "@/assets/images/banners/banner-person.png";
 import bannerService from "@/assets/images/banners/banner-service.png";
 import bannerTablet from "@/assets/images/banners/banner-tablet.png";
 
@@ -67,6 +68,7 @@ const IMAGES = {
     bannerExam,
     bannerTablet,
     bannerLayout,
+    bannerPerson,
     banner1,
     banner2,
     banner3,

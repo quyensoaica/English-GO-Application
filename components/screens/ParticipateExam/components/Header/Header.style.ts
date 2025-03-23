@@ -25,7 +25,6 @@ const HeaderStyles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   titleBox: {
-    flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -69,6 +68,25 @@ const HeaderStyles = StyleSheet.create({
     lineHeight: 20,
     fontSize: 15,
     fontFamily: FONTS.MERIENDA_BOLD,
+  },
+
+  // TimeCountdown
+  timeCountdownBox: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 2,
+    marginTop: 2,
+  },
+
+  minuteBox: {},
+  secondBox: {},
+  spaceBox: {},
+  timeText: {
+    fontSize: 23,
+    color: COLORS.textWhite,
+    fontFamily: FONTS.MERIENDA_BLACK,
+    lineHeight: 28,
   },
 });
 export default HeaderStyles;
