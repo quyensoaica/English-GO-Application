@@ -1,12 +1,15 @@
+import MainLayout from "@/components/layouts/MainLayout";
 import HistoryScreen from "@/components/screens/History";
+import ScrollViewCustom from "@/components/ui/ScrollViewCustom";
 import React from "react";
-import { View } from "react-native";
 
 const HistoryTab = () => {
   return (
-    <View style={{ flex: 1 }}>
-      <HistoryScreen />
-    </View>
+    <MainLayout>
+      <ScrollViewCustom>
+        <HistoryScreen />
+      </ScrollViewCustom>
+    </MainLayout>
   );
 };
 
