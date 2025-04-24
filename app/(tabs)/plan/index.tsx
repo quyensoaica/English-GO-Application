@@ -1,12 +1,15 @@
+import MainLayout from "@/components/layouts/MainLayout";
 import PlanScreen from "@/components/screens/Plan";
+import ScrollViewCustom from "@/components/ui/ScrollViewCustom";
 import React from "react";
-import { View } from "react-native";
 
 const PlanTab = () => {
   return (
-    <View style={{ flex: 1 }}>
-      <PlanScreen />
-    </View>
+    <MainLayout>
+      <ScrollViewCustom>
+        <PlanScreen />
+      </ScrollViewCustom>
+    </MainLayout>
   );
 };
 

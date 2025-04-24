@@ -14,6 +14,8 @@ const DeviceInfomation = () => {
           <Text style={ExamRoomStyles.tabItemOrderText}>1</Text>
         </View>
         <Text style={ExamRoomStyles.tabItemHeaderText}>Kiểm tra thiết bị</Text>
+
+        {/* NHIỆM VỤ 2: Design giao diện cho tab kiểm tra thiết bị */}
       </View>
     </ScrollView>
   );

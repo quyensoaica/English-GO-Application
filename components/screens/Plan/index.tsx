@@ -1,12 +1,17 @@
-import MainLayout from "@/components/layouts/MainLayout";
 import React from "react";
-import { Text } from "react-native";
+import { View } from "react-native";
+import PlanStyles from "./Plan.style";
+import ListPackage from "./components/ListPackage";
+import PlanHeader from "./components/PlanHeader";
+import GradingServicePackage from "./components/GradingService";
 
 const PlanScreen = () => {
   return (
-    <MainLayout>
-      <Text>PlanScreen</Text>
-    </MainLayout>
+    <View style={PlanStyles.container}>
+      <PlanHeader />
+      <ListPackage />
+      <GradingServicePackage />
+    </View>
   );
 };
 
