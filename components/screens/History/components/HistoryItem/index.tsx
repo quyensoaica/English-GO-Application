@@ -5,6 +5,7 @@ import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import React, { useMemo } from "react";
 import { Pressable, Text, View } from "react-native";
 import HistoryItemStyles from "./HistoryItem.style";
+import { useRouter } from "expo-router";
 interface HistoryItemProps {
   order?: number;
   exam?: IExamScore;
@@ -20,6 +21,8 @@ const HistoryItem = ({ order = 1, exam }: HistoryItemProps) => {
     () => (10 / (readingSkill?.totalQuestion ?? 1)) * (readingSkill?.score ?? 0),
     [readingSkill?.score, readingSkill?.totalQuestion]
   );
+    const router = useRouter();
+  
   return (
     <View style={HistoryItemStyles.container}>
       <View style={HistoryItemStyles.headerBox}>
@@ -66,7 +69,7 @@ const HistoryItem = ({ order = 1, exam }: HistoryItemProps) => {
             <Text style={HistoryItemStyles.bodyColumnText}>Chưa chấm điểm</Text>
           </View>
           <View style={HistoryItemStyles.bodyColumn}>
-            <Pressable style={HistoryItemStyles.bodyColumnButton}>
+            <Pressable onPress={() => router.navigate('/(tabs)/history/grading')} style={HistoryItemStyles.bodyColumnButton}>
               <Text style={HistoryItemStyles.bodyButtonText}>Đăng ký chấm</Text>
             </Pressable>
           </View>

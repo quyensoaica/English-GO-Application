@@ -35,6 +35,11 @@ import bannerPerson from "@/assets/images/banners/banner-person.png";
 import bannerService from "@/assets/images/banners/banner-service.png";
 import bannerTablet from "@/assets/images/banners/banner-tablet.png";
 
+import plan1 from "@/assets/images/plans/plan-1.png";
+import plan2 from "@/assets/images/plans/plan-2.png";
+import plan3 from "@/assets/images/plans/plan-3.png";
+import plan4 from "@/assets/images/plans/plan-4.png";
+
 const IMAGES = {
   wellcome: {
     wellcome1,
@@ -57,6 +62,12 @@ const IMAGES = {
     about2,
     about3,
     about4,
+  },
+  plans: {
+    plan1,
+    plan2,
+    plan3,
+    plan4,
   },
   icons: {
     iconPractice,

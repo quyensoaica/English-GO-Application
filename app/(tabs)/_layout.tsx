@@ -40,7 +40,7 @@ const tabArray: {
   },
 
   {
-    name: "history/index",
+    name: "history",
     label: "Lịch sử",
     route: "/(tabs)/history",
     icon: "trophy",

@@ -14,6 +14,8 @@ const ExamInfomation = () => {
           <Text style={ExamRoomStyles.tabItemOrderText}>2</Text>
         </View>
         <Text style={ExamRoomStyles.tabItemHeaderText}>Thông tin bài thi</Text>
+
+        {/* NHIỆM VỤ 2: Design giao diện cho tab thông tin bài thi */}
       </View>
     </ScrollView>
   );
