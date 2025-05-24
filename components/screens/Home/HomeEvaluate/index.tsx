@@ -39,6 +39,10 @@ const HomeEvaluate = () => {
 		// In a real app, you would send to an API
 		setTimeout(() => {
 			setIsLoading(false);
+			//Action
+			
+			//action after successful submission
+			evaluateRef = ""; // Clear the input field
 			Alert.alert(
 				"Thành công",
 				"Cảm ơn bạn đã gửi đánh giá về English GO!",
