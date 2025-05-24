@@ -5,5 +5,8 @@ const HomeEvalueateStyles = StyleSheet.create({
     marginTop: 20,
   },
   formBox: {},
+  button:{
+    marginTop:10,
+  }
 });
 export default HomeEvalueateStyles;
